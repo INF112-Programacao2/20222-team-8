@@ -1,0 +1,12 @@
+Produtos do e-commerce:
+
+Moleton - R$160,00 - id: 1234546j4kj54j2323b1
+Camisa - R$36,00 - id: 435m344434n32k3j2n34 
+Caneca R$19,90 - id: 43n5k45h4k64k6h565h55
+Tirante R$ 7,90 - id: 2345457m67b5j676v6h878
+
+Tamanhos:
+
+U
+
+P, M, G
