@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "Makefile": "cpp",
+        "iosfwd": "cpp",
+        "fstream": "cpp"
+    }
+}
