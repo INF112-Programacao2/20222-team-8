@@ -1,0 +1,102 @@
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: p
+precoProduto: R$23
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: G
+precoProduto: R$23
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: M
+precoProduto: R$23
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: P
+precoProduto: R$23
+12 unidades
+
+***Cadastrando Camisas***
+idProduto: 2323
+tamanhoProduto: G
+precoProduto: R$30
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 2323
+tamanhoProduto: P
+precoProduto: R$30
+12 unidades
+
+***Cadastrando Camisas***
+idProduto: 2323
+tamanhoProduto: P
+precoProduto: R$23
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: p
+precoProduto: R$35
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 23232
+tamanhoProduto: G
+precoProduto: R$35
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 2323
+tamanhoProduto: P
+precoProduto: R$30
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 2323
+tamanhoProduto: G
+precoProduto: R$30
+12 unidades
+
+***Cadastrando Camisas***
+idProduto: 123
+tamanhoProduto: g
+precoProduto: R$10
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 123
+tamanhoProduto: G
+precoProduto: R$10
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 321
+tamanhoProduto: G
+precoProduto: R$20
+10 unidades
+
+***Cadastrando Camisas***
+idProduto: 321
+tamanhoProduto: P
+precoProduto: R$20
+12 unidades
+
+***Cadastrando Camisas***
+idProduto: 5367
+tamanhoProduto: G
+precoProduto: R$435
+13 unidades
+
+***Cadastrando Camisas***
+idProduto: 444
+tamanhoProduto: P
+precoProduto: R$12
+13 unidades
+
