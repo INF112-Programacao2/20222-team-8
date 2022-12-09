@@ -36,9 +36,7 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com o preco do produto: ";
                 std::cin >> precoProduto;
                 moletomcliente << "***Moletom CCP***" << std::endl;
-                moletomcliente << std::endl;
                 moletomcliente << "Preco: R$" << precoProduto << std::endl;
-                moletomcliente << std::endl;
                 moletomcliente << "Tamanhos Disponiveis: ";
                 while(true){
                     char flag;
@@ -81,9 +79,7 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com o preco do produto: ";
                 std::cin >> precoProduto;
                 camisaCliente << "***Camisa CCP***" << std::endl;
-                camisaCliente << std::endl;
                 camisaCliente << "Preco: R$" << precoProduto << std::endl;
-                camisaCliente << std::endl;
                 camisaCliente << "Tamanhos Disponiveis: ";
                 while(true){
                     char flag;
@@ -125,9 +121,7 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com o preco do produto: ";
                 std::cin >> precoProduto;
                 canecaCliente << "***Caneca CCP***" << std::endl;
-                canecaCliente << std::endl;
                 canecaCliente << "Preco: R$" << precoProduto << std::endl;
-                canecaCliente << std::endl;
                 canecaCliente << "Tamanho: U" << std::endl;
                 while(true){
                     char flag;
@@ -161,9 +155,7 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com o preco do produto: ";
                 std::cin >> precoProduto;
                 tiranteCliente << "***Tirante CCP***" << std::endl;
-                tiranteCliente << std::endl;
                 tiranteCliente << "Preco: R$" << precoProduto << std::endl;
-                tiranteCliente << std::endl;
                 tiranteCliente << "Tamanho: U" << std::endl;
                 while(true){
                     char flag;

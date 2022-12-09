@@ -1,5 +1,3 @@
 ***Moletom CCP***
-
-Preco: R$23
-
-Tamanhos Disponiveis: G 
+Preco: R$21
+Tamanhos Disponiveis: P G 
