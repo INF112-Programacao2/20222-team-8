@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stdexcept>
 
 int main() {
 
@@ -88,27 +89,47 @@ int main() {
 
 
     //Leitura de um arquico para leitura de qtd de itens
-    /*string nome, cpf;
-    int qtdItens;
-    try {
-        ofstream arq("cadastro.txt");
-        if (arq.is_open()) {
-            cout << "Digite o nome: ";
-            getline(cin, nome);
-            cout << "Digite o CPF: ";
-            getline(cin, cpf);
-            cout << "Digite a quantidade de itens: ";
-            cin >> qtdItens;
-            arq << nome << "\n";
-            arq << cpf << "\n";
-            arq << qtdItens << "\n";
-            arq.close();
-            cout << "\nCadastro realizado com sucesso!\n";
-        }
-        else {
-            throw "Erro ao abrir o arquivo";
-        }
+    std::cout << "****Preencha Seus Dados Para o Orçamento*****\n";
+    using namespace std;
+    //Declaracao de variaveis
+    string nome, cpf, email;
+    int quantidadeItens;
+
+    //Criacao do objeto de arquivo de saida
+    ofstream arquivoSaida("dados.txt");
+
+    //Verificacao se o arquivo foi criado com sucesso
+    if (!arquivoSaida)
+    {
+        //Excecao: arquivo nao foi criado
+        throw runtime_error("Nao foi possivel criar o arquivo de saida");
     }
-    catch (const char* msg) {
-}*/
+
+    //Entrada de dados pelo usuario
+    cout << "Insira o nome: ";
+    cin >> nome;
+    cout << "Insira o CPF: ";
+    cin >> cpf;
+    cout << "Insira a quantidade de itens: ";
+    cin >> quantidadeItens;
+
+    //Tratamento de excecao: quantidade de itens nao pode ser menor que 20
+    if (quantidadeItens < 20)
+    {
+        throw runtime_error("A quantidade de itens nao pode ser menor que 20");
+    }
+
+    cout << "Insira o email: ";
+    cin >> email;
+
+    //Gravacao dos dados no arquivo
+    arquivoSaida << "Nome: " << nome << endl;
+    arquivoSaida << "CPF: " << cpf << endl;
+    arquivoSaida << "Quantidade de itens: " << quantidadeItens << endl;
+    arquivoSaida << "Email: " << email << endl;
+
+    //Fechamento do arquivo
+    arquivoSaida.close();
+
+    
 }
