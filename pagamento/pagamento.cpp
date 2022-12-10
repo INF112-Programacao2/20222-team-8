@@ -3,11 +3,19 @@
 #include <string>
 
 Pagamento::Pagamento(int id) :
-	id_(id) {}
+	idPagamento(id) {}
 
-int Pagamento::getId() const
-{
-	return id_;
+int Pagamento::getIdPagamento() {
+	return idPagamento;
+}
+
+void Pagamento::setIdPagamento(int id) {
+	idPagamento = id;
 }
 
 
+void Pagamento::exibirPagamento() {
+	std::cout << "Exibindo Dados do Pagamento :  /n" << std::endl;
+	std::cout << "O Id do Pagamento é :" << this->getIdPagamento() << std::endl;
+
+}

@@ -2,20 +2,16 @@
 #define TEAM8_PAGAMENTO_H
 #include <string>
 
-class Pagamento {
+class Pagamento : 
+{
 public:
-	// Constructor
 	Pagamento(int id);
+	void virtual exibirPagamento();
+	void setIdPagamento(int id);
+	int getIdPagamento();
 
-	// Método virtual para exibição de informações de pagamento
-	virtual void ExibirPagamento() const = 0;
-
-	// Getter para o atributo id_
-	int getId() const;
-
-private:
-	// Identificador único para cada Pagamento
-	int id_;
+protected:
+	int idPagamento;
 };
 #endif // !TEAM8_PAGAMENTO_H
 

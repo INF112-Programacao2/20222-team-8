@@ -1,13 +1,13 @@
 #ifndef PEDIDO_H
 #define PEDIDO_H
+#include "produto.h"
 
-class Pedido {
+class Pedido : public Produto {
 private:    
   int _idPedido;
-  int _dataDaCompra;
   double _totalCompra;
 public:
-  Pedido(int idPedido);
+ // Pedido(int idPedido);
   bool produtoEstaEmEstoque();
   void calculaTotalCompra();
   double get_TotalCompra();

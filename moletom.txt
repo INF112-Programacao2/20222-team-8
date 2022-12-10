@@ -1,12 +1,6 @@
 ***Cadastrando Moletons***
 idProduto: 123
-tamanhoProduto: P
-precoProduto: R$21
-2 unidades
-
-***Cadastrando Moletons***
-idProduto: 123
 tamanhoProduto: G
-precoProduto: R$21
+precoProduto: R$34
 4 unidades
 

@@ -6,17 +6,13 @@
 class PagamentoPix : Pagamento
 {
 public:
-	// Constructor
-	PagamentoPix(int id, std::string key);
-	// Método substituído para exibir informações de pagamento
-	void ExibirPagamento() const override;
-	//Getter para Chave Pix
-	std::string getChave() const;
-	// Setter para chavepix
-	void setChave(std::string key);
+	PagamentoPix(int chave, int id);
+	int getChavePix();
+	void setChavePix(int chave);
+	void virtual exibirPagamento() override;
+
 private:
-	// Pix key usado para pagamento
-	std::string chave_pix;
+	int chavePix;
 };
 
 

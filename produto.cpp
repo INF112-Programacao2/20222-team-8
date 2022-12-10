@@ -30,6 +30,7 @@ void Produto::cadastraProduto(){
         std::cout << "Qual produto quer cadastrar 1 - Moletom | 2 - Camisa | 3 - Caneca | 4 - Tirante?: ";
         std::cin >> prod;
         switch (prod){
+            int n;
             case 1:{
                 std::cout << "Entre com a id do produto: ";
                 std::cin >> idProduto;
@@ -41,28 +42,64 @@ void Produto::cadastraProduto(){
                 while(true){
                     char flag;
                     std::ofstream produto("moletom.txt", std::ios::app);
+                  //  std::ofstream unidade("unidadeP.txt", std::ios::app);
                     
                     produto << "***Cadastrando Moletons***" << std::endl;
                     produto << "idProduto: " << idProduto << std::endl;
-                    std::cout << "Entre com o tamanho do produto: ";
-                    std::cin >> tamanhoProduto;
+
+                    std::cout << "Entre com o tamanho do produto (P/M/G): ";
+                     n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> tamanhoProduto;
+                                 if(tamanhoProduto!='P' && tamanhoProduto!='M' && tamanhoProduto!='G')
+                                     throw "Resposta invalida! Digite P, M ou G: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
+
                     produto << "tamanhoProduto: " << tamanhoProduto << std::endl;
                     produto << "precoProduto: R$" << precoProduto << std::endl;
 
                     moletomcliente << tamanhoProduto << " ";
-
+        
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
                     produto << quantidade << " unidades" << std::endl;
                     std::cout << "Deseja cadastrar mais tamanhos (S/N)?: ";
-                    std::cin >> flag;
+                    n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag;
+                                 if(flag!='S' && flag!='s' && flag!='N' && flag!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
                     produto << std::endl;
                     produto.close();
-                    if(flag == 'N'){
+                    if(flag == 'N' || flag=='n'){
                         char flag2;
                         std::cout << "Deseja cadastrar mais produtos (S/N)?: ";
-                        std::cin >> flag2;
-                        if(flag2 == 'N'){
+                        n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag2;
+                                 if(flag2!='S' && flag2!='s' && flag2!='N' && flag2!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
+                        if(flag2 == 'N' || flag2 == 'n'){
                             std::cout << "Aplicacao encerrada" << std::endl;
                             saida = false;
                         }
@@ -70,6 +107,7 @@ void Produto::cadastraProduto(){
                         break;
                     }
                 }
+                 moletomcliente.close();
             }
             break;
 
@@ -86,8 +124,21 @@ void Produto::cadastraProduto(){
                     std::ofstream produto("camisa.txt", std::ios::app);
                     produto << "***Cadastrando Camisas***" << std::endl;
                     produto << "idProduto: " << idProduto << std::endl;
-                    std::cout << "Entre com o tamanho do produto: ";
-                    std::cin >> tamanhoProduto;
+
+                    std::cout << "Entre com o tamanho do produto (P/M/G): ";
+                    n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> tamanhoProduto;
+                                 if(tamanhoProduto!='P' && tamanhoProduto!='M' && tamanhoProduto!='G')
+                                     throw "Resposta invalida! Digite P, M ou G: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
+
                     produto << "tamanhoProduto: " << tamanhoProduto << std::endl;
                     produto << "precoProduto: R$" << precoProduto << std::endl;
 
@@ -97,14 +148,36 @@ void Produto::cadastraProduto(){
                     std::cin >> quantidade;
                     produto << quantidade << " unidades" << std::endl;
                     std::cout << "Deseja cadastrar mais tamanhos (S/N)?: ";
-                    std::cin >> flag;
+                    n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag;
+                                 if(flag!='S' && flag!='s' && flag!='N' && flag!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
                     produto << std::endl;
                     produto.close();
-                    if(flag == 'N'){
+                    if(flag == 'N' || flag == 'n') {
                         char flag2;
                         std::cout << "Deseja cadastrar mais produtos (S/N)?: ";
-                        std::cin >> flag2;
-                        if(flag2 == 'N'){
+                        n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag2;
+                                 if(flag2!='S' && flag2!='s' && flag2!='N' && flag2!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
+                        if(flag2 == 'N' || flag2 == 'n'){
                             std::cout << "***Aplicacao encerrada***" << std::endl;
                             saida = false;
                         }
@@ -112,6 +185,7 @@ void Produto::cadastraProduto(){
                         break;
                     }
                 }
+                camisaCliente.close();
             }
             break;
 
@@ -137,8 +211,19 @@ void Produto::cadastraProduto(){
                     produto.close();
                     char flag2;
                     std::cout << "Deseja cadastrar mais produtos (S/N)?: ";
-                    std::cin >> flag2;
-                    if(flag2 == 'N'){
+                    n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag2;
+                                 if(flag2!='S' && flag2!='s' && flag2!='N' && flag2!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         } 
+                    if(flag2 == 'N' || flag2 == 'n'){
                         std::cout << "***Aplicacao encerrada***" << std::endl;
                         saida = false;
                     }
@@ -146,6 +231,7 @@ void Produto::cadastraProduto(){
                     break;
                     
                 }
+                canecaCliente.close();
             }
             break;
 
@@ -171,8 +257,19 @@ void Produto::cadastraProduto(){
                     produto.close();
                     char flag2;
                     std::cout << "Deseja cadastrar mais produtos (S/N)?: ";
-                    std::cin >> flag2;
-                    if(flag2 == 'N'){
+                    n = 0;
+                         while(n==0) {
+                             try{
+                                std::cin >> flag2;
+                                 if(flag2!='S' && flag2!='s' && flag2!='N' && flag2!='n')
+                                     throw "Resposta invalida! Digite S ou N: "; 
+                                 n = 1;
+                             } catch(const char *msg) {
+                                 std::cout << msg << std::endl;
+                                 n = 0;
+                             }
+                         }  
+                    if(flag2 == 'N' || flag2 == 'n'){
                         std::cout << "***Aplicacao encerrada***" << std::endl;
                         saida = false;
                     }
@@ -180,6 +277,7 @@ void Produto::cadastraProduto(){
                     break;
                     
                 }
+                tiranteCliente.close();
             }
             break;
         }

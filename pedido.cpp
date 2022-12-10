@@ -1,8 +1,10 @@
 #include "pedido.h"
+#include <iostream>
 
-Pedido::Pedido(int idPedido) {
-    _idPedido = idPedido;
-}
+//Pedido::Pedido(int idPedido) {
+//    _idPedido = idPedido;
+//}
+
 
 bool Pedido::produtoEstaEmEstoque() {
 

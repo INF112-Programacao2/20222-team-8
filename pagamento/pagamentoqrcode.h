@@ -6,17 +6,13 @@
 class PagamentoQrCode : Pagamento
 {
 public:
-	//Construter
-	PagamentoQrCode(int id, std::string codeQr);
-	// Método substituído para exibir informações de pagamento
-	void ExibirPagamento() const override;
-	// Getter for code_ attribute
-	std::string getCodeQr() const;
-	// Setter for code_ attribute
-	void setCodeQr(std::string codeQr);
+	PagamentoQrCode(std::string qrcode, int id);
+	void setQrCode(std::string qrcode);
+	std::string getQrCode();
+	void virtual exibirPagamento() override;
+
 private:
-	// QR code value used for payment
-	std::string code_Qr;
+	std::string QrCode;
 };
 
 #endif //!TEAM8_PAGAMENTOQR_H

@@ -3,14 +3,21 @@
 #include <string>
 class Contato
 {
-protected:
-    int CPNJ;
-    std::string RedeSocial;
 public:
-    virtual void ExibirContato() = 0;
-    std::string getRedeSocial();
-    void setRedeSocial(std::string redeSocial);
-    int getCnpj();
+	Contato(int cpnj,std::string redeSocial, std::string emailGeral);
+	void setEmail(std::string emailGeral);
+	void setRedeSocial(std::string redeSocial);
+	std::string getEmail();
+	std::string getRedeSocial();
+	int getCnpj();
+	void virtual ExibirContato();
+	
+
+protected:
+	int const Cnpj;
+	std::string EmailContato;
+	std::string RedeSocial;
+
 };
 
 
