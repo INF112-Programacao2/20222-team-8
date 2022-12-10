@@ -4,13 +4,11 @@
 class Contato
 {
 public:
-	Contato(int cpnj,std::string redeSocial, std::string emailGeral);
-	void setEmail(std::string emailGeral);
+	//Contato(int cpnj,std::string redeSocial);
 	void setRedeSocial(std::string redeSocial);
-	std::string getEmail();
 	std::string getRedeSocial();
 	int getCnpj();
-	void virtual ExibirContato();
+	void virtual ExibirContato()=0;
 	
 
 protected:
