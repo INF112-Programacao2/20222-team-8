@@ -1,19 +1,23 @@
 #include <string>
 #include <iostream>
 #include "contatofinanceiro.h"
+using namespace std;
 
-// pos(int x, int y) : vetor(x, y) {} //chama o construtor da classe base
-//ContatoFianceiro(int cnpj, std::string redeSocial, std::string emailFinanceiro)
-	//Contato(cnpj, redeSocial, emailFinanceiro) {}
+ContatoFinanceiro::ContatoFinanceiro(int cnpj, string redeSocial, string emailfinanceiro) {
+    CPNJ = cnpj;
+    RedeSocial = redeSocial;
+    EmailContato = emailfinanceiro;
+}
 
-ContatoFianceiro::ContatoFinanceiro(int cnpj, std::string redeSocial, std::string emailAjuda, int qtdItens) :
-Contato(cnpj,redeSocial,emailajuda), _QtdItens(qtdItens) {}
+ 
+string ContatoFinanceiro::getEmail() {
+    return EmailContato;
+}
 
-void ContatoFianceiro::ExibirContato() {
-	std::cout << "Oi";
+void ContatoFinanceiro::ExibirContato(){
 	/*std::cout << "Caso precise entrar em contato mande uma mensagens com mais detalhes (o comprovante de "
 	<<"pagamento caso tenha ) para nosso email : ";
-	std::cout << getEmail() << std::endl;
+	std::cout << ContatoFinanceiro::getEmail() << std::endl;
 	std::cout << "\nNossas vendas de atacado são a partir de 20 unidades, esse valor representa a quantidade" <<
 	"por iteis.O pagamento não é pelo carrinho de compras, apos a analise do pedido entraremos em contato ."; //contato por onde
 	//entrada do orçamento para o cliente (fstream)
@@ -24,6 +28,42 @@ void ContatoFianceiro::ExibirContato() {
 	<< " esta sendo especificado";
 	std::cout << "\n4-Precisamos que voce deixe algumas informações:\n1-Deixe seu nome e seu CPF."
 	<< "\n2-Deixa um numero de celular para contato, identificar o DDD.";
-	std::cout << "\nO numero do nosso CNPJ : " << getCnpj() << std::endl;
-	std::cout << getRedeSocial();*/
+	std::cout << "\nO numero do nosso CNPJ : " << ContatoFinanceiro::getCnpj() << std::endl;
+	std::cout << ContatoFinanceiro::getRedeSocial();*/
+    std::cout << "oi";
 }
+
+
+
+/* TRATAMENTO EXCESSAO PAR O MAIN
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    while (true)
+    {
+        int x;
+        cout << "Digite um inteiro maior que 20: ";
+        try
+        {
+            cin >> x;
+
+            if (x < 20)
+            {
+                throw runtime_error("Valor invalido: " + to_string(x) + ". O numero deve ser maior ou igual a 20.");
+            }
+            else
+            {
+                cout << "Numero valido: " << x << endl;
+                break;
+            }
+        }
+        catch (runtime_error &e)
+        {
+            cout << e.what() << endl;
+        }
+    }
+}*/

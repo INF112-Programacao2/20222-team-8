@@ -2,13 +2,15 @@
 #define TEAM8_CONTATOFINANCEIRO_H
 #include <string>
 #include "contato.h"
-class ContatoFianceiro : public Contato
+class ContatoFinanceiro : public Contato
 {
+
 public:
-	ContatoFinanceiro(int cnpj, std::string redeSocial, std::string emailajuda, int QtdItens);
-	void virtual ExibirContato() override;
+	ContatoFinanceiro(int cpnj, std::string redeSocial, std::string emailfinanceiro);
+	void ExibirContato();
+	std::string getEmail();
 private:
-	int _QtdItens;
+	std::string EmailContato;
 };
 
 #endif // !TEAM8_CONTATOFINANCEIRO_H
