@@ -10,7 +10,8 @@ public:
 
 	CentraldeAjuda(int cpnj,std::string redeSocial, std::string emailajuda);
 	void virtual ExibirContato() override;
-
+private:
+	std::string EmailContato;
 
 };
 

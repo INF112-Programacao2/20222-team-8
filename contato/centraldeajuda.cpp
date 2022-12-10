@@ -3,8 +3,8 @@
 #include <string>
 using namespace std;
 
-CentraldeAjuda::CentraldeAjuda(int cnpj, std::string redeSocial, std::string emailajuda ) :
-	Contato(cnpj,redeSocial,emailajuda) {}
+CentraldeAjuda::CentraldeAjuda(int cnpj, std::string redeSocial, std::string emailajuda) :
+	Cnpj(cnpj), RedeSocial(redeSocial), EmailContato(emailajuda) {}
 
 
 void CentraldeAjuda::ExibirContato() {
