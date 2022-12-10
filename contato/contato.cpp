@@ -6,7 +6,7 @@
 	Cnpj(cnpj), RedeSocial(redeSocial) {}*/
 
 int Contato::getCnpj() {
-	return Cnpj;
+	return Contato::CPNJ;
 }
 
 

@@ -9,7 +9,8 @@ class CentraldeAjuda : public Contato
 public:
 
 	CentraldeAjuda(int cpnj,std::string redeSocial, std::string emailajuda);
-	void virtual ExibirContato() override;
+	void ExibirContato();
+	std::string getEmail();
 private:
 	std::string EmailContato;
 
