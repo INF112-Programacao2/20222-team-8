@@ -5,14 +5,11 @@
 #include "pagamentoqrcode.h"
 
 int main() {
-	Pagamento P1(1);
-	PagamentoQrCode P2("1A45", 1);
-	//PagamentoPix P3(13527852697, 2);
+	PagamentoQrCode P2(1, "Qrcod");
+	PagamentoPix P3(1234, "as548");
 
-	P1.exibirPagamento();
-	P2.exibirPagamento();
-	//P3.exibirPagamento();
-
+	P2.ExibirPagamento();
+	P3.ExibirPagamento();
 
 	system("pause");
 	return 0;
