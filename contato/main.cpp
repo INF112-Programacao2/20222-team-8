@@ -1,13 +1,14 @@
 #include <iostream>
 #include <string>
-#include "centraldeajuda.h"
 #include "contato.h"
+#include "centraldeajuda.h"
 #include "contatofinanceiro.h"
 
 
 int main() {
 
-	CentralDeAjuda *central = nullptr;
+	ContatoFinanceiro* contato = new ContatoFinanceiro(1, "face", "email");
+	contato->ExibirContato();
 
 
 
