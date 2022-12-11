@@ -14,6 +14,38 @@ char Produto::getTamanhoProduto(){
     return tamanhoProduto;
 }
 
+int Produto::getQtMoletomP(){
+    return qt_moletom_P;
+}
+
+int Produto::getQtMoletomM(){
+    return qt_moletom_M;
+}
+
+int Produto::getQtMoletomG(){
+    return qt_moletom_G;
+}
+
+int Produto::getQtCamisaP(){
+    return qt_camisa_P;
+}
+
+int Produto::getQtCamisaM(){
+    return qt_camisa_M;
+}
+
+int Produto::getQtCamisaG(){
+    return qt_camisa_G;
+}
+
+int Produto::getQtCaneca(){
+    return qt_caneca;
+}
+
+int Produto::getQtTirante(){
+    return qt_tirante;
+}
+
 double Produto::getPrecoProduto(){
     return precoProduto;
 }
@@ -68,6 +100,21 @@ void Produto::cadastraProduto(){
         
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
+
+                    if(tamanhoProduto == 'P'){
+                        qt_moletom_P += quantidade;
+
+                        std::cout << qt_moletom_P << std::endl;
+                    }
+
+                    else if(tamanhoProduto == 'M'){
+                        qt_camisa_P += quantidade;
+                    }
+                    
+                    else if(tamanhoProduto == 'G'){
+                        qt_camisa_P += quantidade;
+                    }
+
                     produto << quantidade << " unidades" << std::endl;
                     std::cout << "Deseja cadastrar mais tamanhos (S/N)?: ";
                     n = 0;
@@ -137,7 +184,7 @@ void Produto::cadastraProduto(){
                                  std::cout << msg << std::endl;
                                  n = 0;
                              }
-                         }  
+                         }
 
                     produto << "tamanhoProduto: " << tamanhoProduto << std::endl;
                     produto << "precoProduto: R$" << precoProduto << std::endl;
@@ -146,6 +193,19 @@ void Produto::cadastraProduto(){
 
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
+                    
+                    if(tamanhoProduto == 'P'){
+                        qt_camisa_P += quantidade;
+                    }
+
+                    else if(tamanhoProduto == 'M'){
+                        qt_camisa_M += quantidade;
+                    }
+
+                    else if(tamanhoProduto == 'G'){
+                        qt_camisa_G += quantidade;
+                    }
+
                     produto << quantidade << " unidades" << std::endl;
                     std::cout << "Deseja cadastrar mais tamanhos (S/N)?: ";
                     n = 0;
@@ -206,6 +266,9 @@ void Produto::cadastraProduto(){
                     produto << "precoProduto: R$" << precoProduto << std::endl;
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
+                    
+                    qt_caneca += quantidade;
+
                     produto << quantidade << " unidades" << std::endl;
                     produto << std::endl;
                     produto.close();
@@ -252,6 +315,9 @@ void Produto::cadastraProduto(){
                     produto << "precoProduto: R$" << precoProduto << std::endl;
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
+
+                    qt_tirante += quantidade;
+
                     produto << quantidade << " unidades" << std::endl;
                     produto << std::endl;
                     produto.close();

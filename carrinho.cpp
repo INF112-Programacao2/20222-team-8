@@ -2,8 +2,8 @@
 #include <iostream>
 
 void Carrinho::adicionarProdutos() {
-
-    std::cout << "Qual produto?\nDigite 1 - Moletom\nDigite 2 - Camisa\nDigite 3 - Caneca\nDigite 4 - Tirante\n";
+    Produto qt;
+    std::cout << "Qual produto?\nDigite 1 - Moletom | Digite 2 - Camisa | Digite 3 - Caneca | Digite 4 - Tirante: ";
          int n=0;           
              while(n==0) {
                  try{
@@ -19,7 +19,7 @@ void Carrinho::adicionarProdutos() {
                 
              switch(_qualproduto) {
                  case 1: {
-                     std::cout << "Qual tamanho (P/M/G)? ";
+                     std::cout << "Qual tamanho (P/M/G)?: ";
                          n = 0;
                          while(n==0) {
                              try{
@@ -36,17 +36,87 @@ void Carrinho::adicionarProdutos() {
                          switch(_tamanho) {
                             case 'P': {
                                  std::cout << "Quantas unidades? ";
-                                 std::cin >> _unidades;
+                                 //std::cin >> _unidades;
+                                 //Produto qt;
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtMoletomP())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtMoletomP() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+
+                                }  
+
                             }
                             break;
                             case 'M': {
                                  std::cout << "Quantas unidades? ";
-                                 std::cin >> _unidades;
+                                 //std::cin >> _unidades;
+                                 //Produto qt;
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtMoletomM())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtMoletomM() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+                                }  
                             }
                             break;
                             case 'G': {
                                  std::cout << "Quantas unidades? ";
                                  std::cin >> _unidades;
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtMoletomG())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtMoletomG() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+                                }  
                             }
                             break;
                          }
@@ -72,17 +142,92 @@ void Carrinho::adicionarProdutos() {
                          switch(_tamanho) {
                             case 'P': {
                                  std::cout << "Quantas unidades? ";
-                                 std::cin >> _unidades;
+                                 //std::cin >> _unidades;
+                                 
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtCamisaP())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtCamisaP() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+
+                                }
+
                             }
                             break;
                             case 'M': {
                                  std::cout << "Quantas unidades? ";
-                                 std::cin >> _unidades;
+                                 //std::cin >> _unidades;
+
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtCamisaM())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtCamisaM() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+
+                                }
+
                             }
                             break;
                             case 'G': {
                                  std::cout << "Quantas unidades? ";
-                                 std::cin >> _unidades;
+                                 //std::cin >> _unidades;
+
+                                 n = 0;
+                                 while(n==0) {
+                                    try{
+                                        std::cin >> _unidades;
+                                        if(_unidades > qt.getQtCamisaG())
+                                            throw "Quantidade maior do que a disponivel em estoque - "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtCamisaG() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+
+                                }
+
                             }
                             break;
 
@@ -92,13 +237,63 @@ void Carrinho::adicionarProdutos() {
                  
                  case 3: {
                      std::cout << "Quantas unidades? ";
-                     std::cin >> _unidades;
+                     //std::cin >> _unidades;
+
+                     n = 0;
+                            while(n==0) {
+                                try{
+                                    std::cin >> _unidades;
+                                    if(_unidades > qt.getQtCaneca())
+                                        throw "Quantidade maior do que a disponivel em estoque - "; 
+                                    n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg << qt.getQtCaneca() << " em estoque: ";
+                                        n = 0;
+                                    }
+
+                                    try{
+                                        //std::cin >> _unidades;
+                                        if(_unidades <= 0)
+                                            throw "Quantidade deve ser maior que 0: "; 
+                                        n = 1;
+                                    } catch(const char *msg) {
+                                        std::cout << msg;
+                                        n = 0;
+                                    }
+
+                                }
+
                  }
                  break;
                 
                  case 4: {
                      std::cout << "Quantas unidades? ";
-                     std::cin >> _unidades;
+                     //std::cin >> _unidades;
+
+                     n = 0;
+                     while(n==0) {
+                        try{
+                            std::cin >> _unidades;
+                            if(_unidades > qt.getQtCamisaP())
+                                throw "Quantidade maior do que a disponivel em estoque - "; 
+                            n = 1;
+                        } catch(const char *msg) {
+                            std::cout << msg << qt.getQtCamisaP() << " em estoque: ";
+                            n = 0;
+                        }
+
+                          try{
+                            //std::cin >> _unidades;
+                            if(_unidades <= 0)
+                            throw "Quantidade deve ser maior que 0: "; 
+                            n = 1;
+                        } catch(const char *msg) {
+                            std::cout << msg;
+                            n = 0;
+                        }
+
+                    }
+
                  }
                  break;
 
