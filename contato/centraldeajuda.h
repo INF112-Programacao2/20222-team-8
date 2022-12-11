@@ -1,4 +1,3 @@
-//fazer saida de arquivo para receber a reclamação do cliente
 #ifndef TEAM8_CENTRALDEAJUDA_H
 #define TEAM8_CENTRALDEAJUDA_H
 #include <string>
@@ -8,11 +7,12 @@ class CentraldeAjuda : public Contato
 {
 public:
 
-	CentraldeAjuda(int cpnj,std::string redeSocial, std::string emailajuda);
-	void virtual ExibirContato() override;
-
+	CentraldeAjuda(int cpnj, std::string redeSocial, std::string emailajuda);
+	void ExibirContato();
+	std::string getEmail();
+private:
+	std::string EmailContato;
 
 };
 
 #endif // !TEAM8_CENTRALDEAJUDA_H
-
