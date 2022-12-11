@@ -4,6 +4,23 @@
 #include <stdexcept>
 
 #include "carrinho.h"
+#include "contato/contato.h"
+#include "contato/centraldeajuda.h"
+#include "contato/contatofinanceiro.h"
+
+//para a parte do orcamento
+struct Item {
+    std::string name;
+    int quantity;
+};
+
+struct Orcamento {
+    std::string name;
+    std::string cpf;
+    std::string email;
+    std::vector<Item> items;
+};
+
 
 int main() {
 
@@ -101,6 +118,124 @@ int main() {
                     return 0;
                 }
 
+            }
+
+                //Parte entrar em contato cliente
+                std::cout << "Esta precisando entrar em contato ? Escolha uma das opçoes:\n";
+                std::cout << "1-Central de Ajuda\n2-Contato financeiro\n3-Encerrar Programa\n";
+                int contato;
+                //entrada witch com excessao
+                try {
+                    cin >> contato;
+                    switch (contato)
+                    {
+                    case 1: //Central De Ajuda
+                    {
+                        CentraldeAjuda* central = CentraldeAjuda(20472256000109, "Instagram : ccpstrore", "ccpstore@help.br");
+                        central->ExibirContato();
+                    }
+                    case 2://Contato Financeiro
+                    {
+                        ContatoFinanceiro* contato = new ContatoFinanceiro(20472256000109, "Instagram : ccpstrore", "ccpstore@financeiro.br");
+                        contato->ExibirContato();
+                        //Leitura de um arquico para leitura de qtd de itens
+                        std::cout << "****Preencha Seus Dados Para o Orçamento*****\n";
+                        std::ofstream file("orcamento.txt");
+                        //text para ver se o qrquivo foi aberto
+                        if (!file.is_open()) {
+                            std::cerr << "Error: unable to open file\n";
+                            return 1;
+                        }
+                        //criar struct orcamento
+                        Orcamento orcamento;
+                        //leitura dos dados cliente
+                        std::cout << "Escreva seu nome: ";
+                        std::getline(std::cin, orcamento.name);
+                        file << "Nome cliente: " << orcamento.name << '\n';
+
+                        std::cout << "Escreva o seu CPF: ";
+                        std::getline(std::cin, orcamento.cpf);
+                        file << "CPF: " << orcamento.cpf << '\n';
+
+                        std::cout << "Escreva seu email: ";
+                        std::getline(std::cin, orcamento.email);
+                        file << "Email: " << orcamento.email << '\n';
+
+                        std::string item_name;
+                        int item_quantity;
+                        //loop para que possa se adicionar mais de um item
+                        while (true) {
+                            std::cout << "Escreva o nome do produto (ou aperte a tecla ENTER para finalizar): ";
+                            std::getline(std::cin, item_name);
+                            if (item_name.empty()) {
+                                break;
+                            }
+
+                            std::cout << "Escreva a quantidade desse item: ";
+                            std::cin >> item_quantity;
+                            std::cin.ignore();
+
+                            orcamento.items.push_back({ item_name, item_quantity });
+                        }
+
+                        file << "Items:\n";
+                        for (const auto& item : orcamento.items) {
+                            file << "  - " << item.name << " (" << item.quantity << ")\n";
+                        }
+
+                        file.close();
+
+                        std::cout << "Orcamento salvo com sucesso.\n";
+                        {
+
+
+                            std::ofstream file("orcamento.txt");
+                        }
+                        break; }
+                    case 3:
+                    {
+                        break;
+                    }
+                    default:
+                        throw std::invalid_argument("Escolha invalida. Escolha 1, 2, ou 3.");
+                    }
+                }
+                catch (const std::invalid_argument& e) {
+                    std::cout << "Erro: " << e.what() << std::endl;
+                }
+            }}
+        case 2: {
+            using namespace std;
+            const string USERNAME = "admin";
+            const string PASSWORD = "123456";
+
+            bool w = true;
+            while (w)
+            {
+                cout << "Enter username: ";
+                string username;
+                cin >> username;
+
+                cout << "Enter password: ";
+                string password;
+                cin >> password;
+
+                try
+                {
+                    if (username != USERNAME || password != PASSWORD)
+                    {
+                        throw runtime_error("Invalid username or password");
+                    }
+                    //main adm vai ficar aqq
+                    w = 0;
+                    cout << "SIstema ADM\n";
+
+
+                }
+                catch (exception& e)
+                {
+                    cout << "Error: " << e.what() << endl;
+                }
             }
           }
         }
