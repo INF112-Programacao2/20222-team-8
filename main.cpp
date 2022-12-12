@@ -10,6 +10,9 @@
 #include "contato/contato.h"
 #include "contato/centraldeajuda.h"
 #include "contato/contatofinanceiro.h"
+#include "pagamento.h"
+#include "pagamentopix.h"
+#include "pagamentoqrcode.h"
 
 //para a parte do orcamento
 struct Item {
@@ -119,12 +122,97 @@ int main() {
                             }
                          }
                          std::cout << total << std::endl;
+                         std::ofstream arquivo_pedido("pedido.txt", std::ios::app);
+                         if (!arquivo_pedido.is_open()) {
+                             std::cerr << "Error: unable to open file\n";
+
+                         }
+                         arquivo_pedido << "Valor Total em reias :  RS " << total <<"\n";
                     }
+                    
                     
                 }
 
                 case 2:{
-                    std::cout << "\n***Aplicacao Encerrada***\n" << std::endl;
+                    //teste para entrar na aba pagamento
+                    if (total == 0)
+                    {
+                        std::cout << "\n***Aplicacao Encerrada***\n" << std::endl;
+                    }
+                    else
+                    {
+                        std::cout << "Para finalizar a compra escolha qual metodo de pagamento, digite P para pix ou digite B para boleto\n";
+                        char op_pagamento;
+                        bool wh = true;
+                        while (wh)
+                        {
+                            try
+                            {
+                                std::cin >> op_pagamento;
+                                if (op_pagamento != 'P' && op_pagamento != 'B' && op_pagamento != 'b' && op_pagamento != 'p')
+                                {
+                                    throw "Resposta invalida, Digite P ou B !";
+                                }
+                                else if (op_pagamento == 'B' || op_pagamento == 'b')
+                                {
+                                    
+                                    int idpagamento = 1;
+                                    PagamentoQrCode* PagamentoQr = new PagamentoQrCode(idpagamento, "A154878F8HJ");
+                                    std::ifstream arquivoEntrada("pedido.txt");
+                                    std::ofstream arquivoSaida("arquivo_saida.txt");
+                                    std::string linha;
+
+                                    if (arquivoEntrada.is_open()) {
+                                        while (getline(arquivoEntrada, linha)) {
+                                            arquivoSaida << linha << std::endl;
+                                        }
+                                        arquivoSaida << "Pagamento com id " << idpagamento << " foi feito usando QrCode\n" << "O codigo e : " << PagamentoQr->getCodeQr();
+                                        arquivoSaida << "\nO pagamento por boleto demora de 1 a 3 dias uteis para ser contabilizado " <<
+                                            "Entraremos em contato quando for aprovado!" << std::endl;
+                                    }
+                                    else {
+                                        std::cout << "Unable to open file" << std::endl;
+                                    }
+                                    arquivoEntrada.close();
+                                    arquivoSaida.close();
+                                    std::cout << "Pedido confirmado com sucesso! \n";
+                                    wh = 0;
+                                }
+                                    else
+                                    {
+                                        
+                                        PagamentoPix* pagamentopix = new PagamentoPix(2, "145879547");
+                                        int idpagamento = 2;
+                                        std::ifstream arquivoEntrada("pedido.txt");
+                                        std::ofstream arquivoSaida("arquivo_saida.txt");
+                                        std::string linha;
+
+                                        if (arquivoEntrada.is_open()) {
+                                            while (getline(arquivoEntrada, linha)) {
+                                                arquivoSaida << linha << std::endl;
+                                            }
+                                            arquivoSaida << "Pagamento com id " << idpagamento << " foi feito usando Pix\n" << "A chave de pagametno e : " << pagamentopix->getChave();
+                                            arquivoSaida << "\nO Pagamento por Pix demora em cerca de 30 minutos para ser confirmado." << std::endl;
+                                        }
+                                        else {
+                                            std::cout << "Unable to open file" << std::endl;
+                                        }
+                                        arquivoEntrada.close();
+                                        arquivoSaida.close();
+                                        std::cout << "Pedido confirmado com sucesso! \n";
+                                        wh = 0;
+                                    }
+                                
+                            }
+                            catch (const std::exception&)
+                            {
+                                std::cout << "msg" << std::endl;
+                            }
+                        }
+                        
+                        
+                    }
+                    
                  //   goto escolha;
                 }
 
@@ -151,7 +239,8 @@ int main() {
                        contato->ExibirContato();
                        std::cout << "\n****Preencha Seus Dados Para o Orçamento*****\n";
                         //Leitura de um arquico para leitura de qtd de itens
-                        std::ofstream file("orcamento.txt");
+                       
+                       std::ofstream file("clienteorcamento.txt");
                         //text para ver se o qrquivo foi aberto
                         if (!file.is_open()) {
                             std::cerr << "Error: unable to open file\n";
