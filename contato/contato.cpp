@@ -5,7 +5,7 @@
 /*Contato::Contato(int cnpj, std::string redeSocial) :
 	Cnpj(cnpj), RedeSocial(redeSocial) {}*/
 
-int Contato::getCnpj() {
+long long int Contato::getCnpj() {
 	return Contato::CPNJ;
 }
 

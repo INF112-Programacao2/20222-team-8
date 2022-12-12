@@ -4,13 +4,13 @@
 class Contato
 {
 protected:
-    int CPNJ;
+    long long int CPNJ;
     std::string RedeSocial;
 public:
     virtual void ExibirContato() = 0;
     std::string getRedeSocial();
     void setRedeSocial(std::string redeSocial);
-    int getCnpj();
+    long long int getCnpj();
 };
 
 

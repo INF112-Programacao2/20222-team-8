@@ -6,7 +6,7 @@ class ContatoFinanceiro : public Contato
 {
 
 public:
-	ContatoFinanceiro(int cpnj, std::string redeSocial, std::string emailfinanceiro);
+	ContatoFinanceiro(long long int cpnj, std::string redeSocial, std::string emailfinanceiro);
 	void ExibirContato();
 	std::string getEmail();
 private:

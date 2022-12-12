@@ -9,9 +9,22 @@ PagamentoPix::PagamentoPix(int id, std::string chavePix) :
 
 void PagamentoPix::ExibirPagamento() const
 {
-	std::cout << "Exibindo Dados do Pagamento :  " << std::endl;
-	std::cout << "Pagamento com id " << getId() << " foi feito usando Pix\n";
-	std::cout << "O Pagamento por Pix demora em cerca de 30 minutos para ser confirmado." << std::endl;
+    std::ifstream arquivoEntrada("orcamento.txt");
+    std::ofstream arquivoSaida("arquivo_saida.txt");
+    std::string linha;
+
+    if (arquivoEntrada.is_open()) {
+        while (getline(arquivoEntrada, linha)) {
+            arquivoSaida << linha << std::endl;
+        }
+        arquivoSaida << "Pagamento com id " << getId() << " foi feito usando Pix\n" << getChave();
+        arquivoSaida << "O Pagamento por Pix demora em cerca de 30 minutos para ser confirmado." << std::endl;
+    }
+    else {
+        std::cout << "Unable to open file" << std::endl;
+    }
+    arquivoEntrada.close();
+    arquivoSaida.close();
 }
 
 std::string PagamentoPix::getChave() const

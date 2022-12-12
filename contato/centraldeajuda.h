@@ -7,7 +7,7 @@ class CentraldeAjuda : public Contato
 {
 public:
 
-	CentraldeAjuda(int cpnj, std::string redeSocial, std::string emailajuda);
+	CentraldeAjuda(long long int cpnj, std::string redeSocial, std::string emailajuda);
 	void ExibirContato();
 	std::string getEmail();
 private:

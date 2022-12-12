@@ -2,12 +2,12 @@
 #include <string>
 #include "contato.h"
 #include "centraldeajuda.h"
-#include "contatofinanceiro.h"
+#include "CentraldeAjuda.h"
 
 
 int main() {
 
-	ContatoFinanceiro* contato = new ContatoFinanceiro(1, "face", "email");
+	CentraldeAjuda* contato = new CentraldeAjuda(20472256000109, "Instagram : ccpstore", "ccpstore@help.br");
 	contato->ExibirContato();
 
 
