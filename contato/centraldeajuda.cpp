@@ -14,7 +14,8 @@ string CentraldeAjuda::getEmail() {
 	return EmailContato;
 }
 
-void CentraldeAjuda::ExibirContato() {
+void CentraldeAjuda::ExibirContato() //metodo polimorfismo da central de ajuda
+{
 	cout << "Qual problema voce esta tendo ? \n1-Problema com pagamento.\n2-Cancelamento do pedido.\n";
 	cout << "3-Pedido e envio.\n4-Retorno e reembolso" << endl;
 
@@ -98,7 +99,7 @@ void CentraldeAjuda::ExibirContato() {
 				goto escolhe;
 				break;
 			}
-			case 9: {
+			case 9: { //informacao padrao no final de qualquer case
 				cout << "\nCaso tenha um problema mais especifico nos mande um email explicando os acontecimentos : ";
 				cout << CentraldeAjuda::getEmail() << endl;
 				cout << "O numero do nosso CNPJ : " << CentraldeAjuda::getCnpj() << endl;

@@ -15,6 +15,7 @@ string ContatoFinanceiro::getEmail() {
 }
 
 void ContatoFinanceiro::ExibirContato() {
+    //metodo do polimorfismo do contato financeiro
     std::cout << "Caso precise entrar em contato mande uma mensagens com mais detalhes (o comprovante de ";
     std::cout << "pagamento caso tenha ) para nosso email : ";
     std::cout << ContatoFinanceiro::getEmail() << std::endl;
@@ -23,38 +24,3 @@ void ContatoFinanceiro::ExibirContato() {
     std::cout << "\nO numero do nosso CNPJ : " << ContatoFinanceiro::getCnpj() << std::endl;
     std::cout << ContatoFinanceiro::getRedeSocial();
 }
-
-
-
-/* TRATAMENTO EXCESSAO PAR O MAIN
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main()
-{
-    while (true)
-    {
-        int x;
-        cout << "Digite um inteiro maior que 20: ";
-        try
-        {
-            cin >> x;
-
-            if (x < 20)
-            {
-                throw runtime_error("Valor invalido: " + to_string(x) + ". O numero deve ser maior ou igual a 20.");
-            }
-            else
-            {
-                cout << "Numero valido: " << x << endl;
-                break;
-            }
-        }
-        catch (runtime_error &e)
-        {
-            cout << e.what() << endl;
-        }
-    }
-}*/

@@ -6,9 +6,11 @@
 class CentraldeAjuda : public Contato
 {
 public:
-
+	//Construtor
 	CentraldeAjuda(long long int cpnj, std::string redeSocial, std::string emailajuda);
+	//metodo do central de ajuda
 	void ExibirContato();
+	//getter
 	std::string getEmail();
 private:
 	std::string EmailContato;

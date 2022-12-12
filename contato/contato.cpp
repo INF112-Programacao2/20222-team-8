@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-/*Contato::Contato(int cnpj, std::string redeSocial) :
-	Cnpj(cnpj), RedeSocial(redeSocial) {}*/
 
 long long int Contato::getCnpj() {
 	return Contato::CPNJ;
