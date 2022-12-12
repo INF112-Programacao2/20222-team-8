@@ -1,0 +1,6 @@
+***Cadastrando Canecas***
+idProduto: 567
+tamanhoProduto: U
+precoProduto: R$10
+10 unidades
+

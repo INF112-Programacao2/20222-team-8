@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <string>
 #include <stdexcept>
 
+#include "produto.h"
 #include "carrinho.h"
+#include "pedido.h"
 #include "contato/contato.h"
 #include "contato/centraldeajuda.h"
 #include "contato/contatofinanceiro.h"
@@ -25,12 +28,16 @@ struct Orcamento {
 int main() {
 
     int escolha;
+    double total = 0;
+    bool error = true;
+
+   // escolha:
     std::cout << "Escolha sua opçao para continuar\n";
     std::cout << "1-Cliente | 2-Adiministrador: ";
     std::cin >> escolha;
     //Switch da escolha de admin ou cliente
     switch (escolha) {
-        case 1: { {
+        case 1: { 
                 int resposta, qualproduto;
                 char simounao;
                 bool erro = false;
@@ -83,12 +90,15 @@ int main() {
 
                     if (simounao == 'N' || simounao == 'n') {
                         std::cout << "Ah que pena, mas obrigado pela visita!";
-                        return 0;
                     }
                     else {
-                        while (true) {
-                            Carrinho c;                              // CARRINHO
+                        while (error) {
+                            Carrinho c(2, 'P', 10);                              // CARRINHO
                             c.adicionarProdutos();
+                            Produto x;
+                            // c.calculaTotalCompra();
+                            total += c.calculaTotalCompra();
+                            //std::cout << total;
 
                             std::cout << "\nGostaria de adicionar mais produtos ao carrinho (Digite S para sim e N para nao)?: ";
                             do {
@@ -105,17 +115,17 @@ int main() {
                             } while(erro);
 
                             if(simounao=='N' || simounao=='n') {  
-                                return false;
+                                error = false;
                             }
                          }
+                         std::cout << total << std::endl;
                     }
-                    /* \nDigite 1 - Moletom\nDigite 2 - Camisa\nDigite 3 - Caneca\nDigite 4 - Tirante\n" <<
-                    "Caso deseje sair do programa, digite 5";*/
+                    
                 }
 
                 case 2:{
-                    std::cout << "***Aplicacao Encerrada***" << std::endl;
-                    return 0;
+                    std::cout << "\n***Aplicacao Encerrada***\n" << std::endl;
+                 //   goto escolha;
                 }
 
             }
@@ -126,18 +136,18 @@ int main() {
                 int contato;
                 //entrada witch com excessao
                 try {
-                    cin >> contato;
+                    std::cin >> contato;
                     switch (contato)
                     {
                     case 1: //Central De Ajuda
                     {
-                        CentraldeAjuda* central = CentraldeAjuda(20472256000109, "Instagram : ccpstrore", "ccpstore@help.br");
-                        central->ExibirContato();
+                      //  CentraldeAjuda* central = new CentraldeAjuda(20472256000109, "Instagram : ccpstrore", "ccpstore@help.br");
+                       // central->ExibirContato();
                     }
                     case 2://Contato Financeiro
                     {
-                        ContatoFinanceiro* contato = new ContatoFinanceiro(20472256000109, "Instagram : ccpstrore", "ccpstore@financeiro.br");
-                        contato->ExibirContato();
+                       // ContatoFinanceiro* contato = new ContatoFinanceiro(20472256000109, "Instagram : ccpstrore", "ccpstore@financeiro.br");
+                       // contato->ExibirContato();
                         //Leitura de um arquico para leitura de qtd de itens
                         std::cout << "****Preencha Seus Dados Para o Orçamento*****\n";
                         std::ofstream file("orcamento.txt");
@@ -203,42 +213,9 @@ int main() {
                 catch (const std::invalid_argument& e) {
                     std::cout << "Erro: " << e.what() << std::endl;
                 }
-            }}
-        case 2: {
-            using namespace std;
-            const string USERNAME = "admin";
-            const string PASSWORD = "123456";
 
-            bool w = true;
-            while (w)
-            {
-                cout << "Enter username: ";
-                string username;
-                cin >> username;
-
-                cout << "Enter password: ";
-                string password;
-                cin >> password;
-
-                try
-                {
-                    if (username != USERNAME || password != PASSWORD)
-                    {
-                        throw runtime_error("Invalid username or password");
-                    }
-                    //main adm vai ficar aqq
-                    w = 0;
-                    cout << "SIstema ADM\n";
-
-
-                }
-                catch (exception& e)
-                {
-                    cout << "Error: " << e.what() << endl;
-                }
+            // goto escolha;   
             }
-          }
-        }
         
         case 2: {
             using namespace std;
@@ -292,10 +269,10 @@ int main() {
                     break;
                 }
             }
-
+        // goto escolha;
         }
         //system("pause");
         return 0;
     }
-
 }
+

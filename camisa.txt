@@ -1,0 +1,7 @@
+
+***Cadastrando Camisas***
+idProduto: 345
+tamanhoProduto: P
+precoProduto: R$10
+10 unidades
+

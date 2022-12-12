@@ -1,1 +1,7 @@
 
+***Cadastrando Tirantes***
+idProduto: 780
+tamanhoProduto: U
+precoProduto: R$10
+10 unidades
+

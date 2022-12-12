@@ -46,8 +46,20 @@ int Produto::getQtTirante(){
     return qt_tirante;
 }
 
-double Produto::getPrecoProduto(){
-    return precoProduto;
+double Produto::getPrecoMoletom(){
+    return precoMoletom;
+}
+
+double Produto::getPrecoCamisa(){
+    return precoCamisa;
+}
+
+double Produto::getPrecoCaneca(){
+    return precoCaneca;
+}
+
+double Produto::getPrecoTirante(){
+    return precoTirante;
 }
 
 void Produto::cadastraProduto(){
@@ -67,14 +79,13 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com a id do produto: ";
                 std::cin >> idProduto;
                 std::cout << "Entre com o preco do produto: ";
-                std::cin >> precoProduto;
+                std::cin >> precoMoletom;
                 moletomcliente << "***Moletom CCP***" << std::endl;
-                moletomcliente << "Preco: R$" << precoProduto << std::endl;
+                moletomcliente << "Preco: R$" << precoMoletom << std::endl;
                 moletomcliente << "Tamanhos Disponiveis: ";
                 while(true){
                     char flag;
                     std::ofstream produto("moletom.txt", std::ios::app);
-                  //  std::ofstream unidade("unidadeP.txt", std::ios::app);
                     
                     produto << "***Cadastrando Moletons***" << std::endl;
                     produto << "idProduto: " << idProduto << std::endl;
@@ -94,7 +105,7 @@ void Produto::cadastraProduto(){
                          }  
 
                     produto << "tamanhoProduto: " << tamanhoProduto << std::endl;
-                    produto << "precoProduto: R$" << precoProduto << std::endl;
+                    produto << "precoProduto: R$" << precoMoletom << std::endl;
 
                     moletomcliente << tamanhoProduto << " ";
         
@@ -162,9 +173,9 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com a id do produto: ";
                 std::cin >> idProduto;
                 std::cout << "Entre com o preco do produto: ";
-                std::cin >> precoProduto;
+                std::cin >> precoCamisa;
                 camisaCliente << "***Camisa CCP***" << std::endl;
-                camisaCliente << "Preco: R$" << precoProduto << std::endl;
+                camisaCliente << "Preco: R$" << precoCamisa << std::endl;
                 camisaCliente << "Tamanhos Disponiveis: ";
                 while(true){
                     char flag;
@@ -187,7 +198,7 @@ void Produto::cadastraProduto(){
                          }
 
                     produto << "tamanhoProduto: " << tamanhoProduto << std::endl;
-                    produto << "precoProduto: R$" << precoProduto << std::endl;
+                    produto << "precoProduto: R$" << precoCamisa << std::endl;
 
                     camisaCliente << tamanhoProduto << " ";
 
@@ -253,9 +264,9 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com a id do produto: ";
                 std::cin >> idProduto;
                 std::cout << "Entre com o preco do produto: ";
-                std::cin >> precoProduto;
+                std::cin >> precoCaneca;
                 canecaCliente << "***Caneca CCP***" << std::endl;
-                canecaCliente << "Preco: R$" << precoProduto << std::endl;
+                canecaCliente << "Preco: R$" << precoCaneca << std::endl;
                 canecaCliente << "Tamanho: U" << std::endl;
                 while(true){
                     char flag;
@@ -263,7 +274,7 @@ void Produto::cadastraProduto(){
                     produto << "***Cadastrando Canecas***" << std::endl;
                     produto << "idProduto: " << idProduto << std::endl;
                     produto << "tamanhoProduto: " << 'U' << std::endl;
-                    produto << "precoProduto: R$" << precoProduto << std::endl;
+                    produto << "precoProduto: R$" << precoCaneca << std::endl;
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
                     
@@ -302,9 +313,9 @@ void Produto::cadastraProduto(){
                 std::cout << "Entre com a id do produto: ";
                 std::cin >> idProduto;
                 std::cout << "Entre com o preco do produto: ";
-                std::cin >> precoProduto;
+                std::cin >> precoTirante;
                 tiranteCliente << "***Tirante CCP***" << std::endl;
-                tiranteCliente << "Preco: R$" << precoProduto << std::endl;
+                tiranteCliente << "Preco: R$" << precoTirante << std::endl;
                 tiranteCliente << "Tamanho: U" << std::endl;
                 while(true){
                     char flag;
@@ -312,7 +323,7 @@ void Produto::cadastraProduto(){
                     produto << "***Cadastrando Tirantes***" << std::endl;
                     produto << "idProduto: " << idProduto << std::endl;
                     produto << "tamanhoProduto: " << 'U' << std::endl;
-                    produto << "precoProduto: R$" << precoProduto << std::endl;
+                    produto << "precoProduto: R$" << precoTirante << std::endl;
                     std::cout << "Entre com a quantidade desse produto: ";
                     std::cin >> quantidade;
 

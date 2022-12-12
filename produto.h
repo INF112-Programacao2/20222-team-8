@@ -6,21 +6,26 @@ class Produto{
         int idProduto;
         int quantidade;
         //Quantidade moletom
-        int qt_moletom_P = 0;
-        int qt_moletom_M = 0;
-        int qt_moletom_G = 0;
+        int qt_moletom_P = 10;
+        int qt_moletom_M = 10;
+        int qt_moletom_G = 10;
         //Quantidade moletom
-        int qt_camisa_P = 0;
-        int qt_camisa_M = 0;
-        int qt_camisa_G = 0;
+        int qt_camisa_P = 10;
+        int qt_camisa_M = 10;
+        int qt_camisa_G = 10;
         //Quantidade caneca
-        int qt_caneca = 0;
+        int qt_caneca = 10;
         //Quantidade tirante
-        int qt_tirante = 0;
+        int qt_tirante = 10;
 
 
         char tamanhoProduto;
-        double precoProduto;
+
+        double precoMoletom = 10;
+        double precoCamisa = 10;
+        double precoCaneca = 10;
+        double precoTirante = 10;
+
     public:
         int getIdProduto();
         int getQuantidade();
@@ -34,7 +39,11 @@ class Produto{
         int getQtTirante();
         
         char getTamanhoProduto();
-        double getPrecoProduto();
+
+        double getPrecoMoletom();
+        double getPrecoCamisa();
+        double getPrecoCaneca();
+        double getPrecoTirante();
         void cadastraProduto();
         void removerProduto();
         void listaProduto();
