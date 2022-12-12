@@ -141,15 +141,16 @@ int main() {
                     {
                     case 1: //Central De Ajuda
                     {
-                      //  CentraldeAjuda* central = new CentraldeAjuda(20472256000109, "Instagram : ccpstrore", "ccpstore@help.br");
-                       // central->ExibirContato();
+                        CentraldeAjuda* contato = new CentraldeAjuda(20472256000109, "Instagram : ccpstore", "ccpstore@help.br");
+                        contato->ExibirContato();
+                        break;
                     }
                     case 2://Contato Financeiro
                     {
-                       // ContatoFinanceiro* contato = new ContatoFinanceiro(20472256000109, "Instagram : ccpstrore", "ccpstore@financeiro.br");
-                       // contato->ExibirContato();
+                       ContatoFinanceiro* contato = new ContatoFinanceiro(20472256000109, "Instagram : ccpstrore", "ccpstore@financeiro.br");
+                       contato->ExibirContato();
+                       std::cout << "\n****Preencha Seus Dados Para o Orçamento*****\n";
                         //Leitura de um arquico para leitura de qtd de itens
-                        std::cout << "****Preencha Seus Dados Para o Orçamento*****\n";
                         std::ofstream file("orcamento.txt");
                         //text para ver se o qrquivo foi aberto
                         if (!file.is_open()) {
@@ -160,6 +161,7 @@ int main() {
                         Orcamento orcamento;
                         //leitura dos dados cliente
                         std::cout << "Escreva seu nome: ";
+                        std::cin.ignore();
                         std::getline(std::cin, orcamento.name);
                         file << "Nome cliente: " << orcamento.name << '\n';
 
@@ -201,20 +203,23 @@ int main() {
 
                             std::ofstream file("orcamento.txt");
                         }
-                        break; }
+                        break;
+                    }
                     case 3:
                     {
                         break;
                     }
                     default:
                         throw std::invalid_argument("Escolha invalida. Escolha 1, 2, ou 3.");
+                        break;
                     }
                 }
                 catch (const std::invalid_argument& e) {
                     std::cout << "Erro: " << e.what() << std::endl;
                 }
 
-            // goto escolha;   
+            // goto escolha; 
+                break;
             }
         
         case 2: {
