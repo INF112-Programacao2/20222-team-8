@@ -20,9 +20,11 @@ Depois, entre no terminal do Git e digite os comandos git clone e dê CTRL V, pa
 
 
 Caso não tenha definido uma pasta para esse repositorio ser salvo, navegue por Este computador >> OS(C:) >> Usuários >> pasta com seu nome. Ali estará o repositório clonado. 
+
 ![Captura de tela_20221212_094329](https://user-images.githubusercontent.com/115049610/207052320-38046a3a-f9cf-4d88-9382-29e6b7872b37.png)
 ![Captura de tela_20221212_094413](https://user-images.githubusercontent.com/115049610/207052354-ce6c65e4-c582-4079-b23b-6b0e39e1d9db.png)
 ![Captura de tela_20221212_094428](https://user-images.githubusercontent.com/115049610/207052372-8656d6fa-4020-48ed-8046-8411ec440e00.png)
+
 Para fins de simplificação, mova esse repositório para a área de trabalho, tornando mais fácil para acessar.
 
 Agora é só navegar até a pasta pelo terminal e compilar o programa.
